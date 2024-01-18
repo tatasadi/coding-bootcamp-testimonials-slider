@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .footer-link {
+    @apply text-neutral-very-dark-blue cursor-pointer underline;
+  }
+}
