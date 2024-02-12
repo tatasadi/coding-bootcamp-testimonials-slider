@@ -1,5 +1,5 @@
 {
-  "name": "base-apparel-coming-soon-page",
+  "name": "coding-bootcamp-testimonials-slider",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "next": "14.0.4",
+    "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "react": "^18",
     "react-dom": "^18",
@@ -31,6 +32,7 @@
     "plugins": [
       "prettier-plugin-tailwindcss"
     ],
-    "semi": false
+    "semi": false,
+    "singleQuote": true
   }
 }

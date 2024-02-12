@@ -1,6 +1,6 @@
 export default function Reference() {
   return (
-    <footer className="flex flex-col text-center text-sm sm:flex-row md:gap-1">
+    <footer className="flex flex-col text-center text-sm sm:flex-row sm:gap-1 mt-auto lg:absolute lg:bottom-0">
       <div>
         Challenge by{" "}
         <a
@@ -28,7 +28,7 @@ export default function Reference() {
       <div>
         <a
           className="footer-link"
-          href="https://github.com/tatasadi/base-apparel-coming-soon-page"
+          href="https://github.com/tatasadi/coding-bootcamp-testimonials-slider"
           target="_blank"
           rel="noreferrer noopener"
         >
