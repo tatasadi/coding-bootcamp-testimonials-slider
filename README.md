@@ -1,6 +1,6 @@
 # Coding bootcamp testimonials slider solution
 
-This is a solution to the [Coding bootcamp testimonials slider challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/coding-bootcamp-testimonials-slider-4FNyLA8JL). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Coding bootcamp testimonials slider challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/coding-bootcamp-testimonials-slider-4FNyLA8JL). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -13,6 +13,7 @@ This is a solution to the [Coding bootcamp testimonials slider challenge on Fron
   - [My process](#my-process)
     - [Built with](#built-with)
     - [Code Quality with](#code-quality-with)
+    - [Implementation time](#implementation-time)
   - [Author](#author)
 
 ## Overview
@@ -26,9 +27,13 @@ Users should be able to:
 
 ### Screenshots
 
-![](./screenshot1.jpg)
-![](./screenshot2.jpg)
+Desktop:
 
+![](./screenshot1.png)
+
+Mobile:
+
+![](./screenshot2.png)
 
 ### Links
 
@@ -45,6 +50,10 @@ Users should be able to:
 ### Code Quality with
 
 ![](https://img.shields.io/badge/eslint-fff?style=for-the-badge&logo=eslint&logoColor=fff&color=4930bd) ![](https://img.shields.io/badge/prettier-fff?style=for-the-badge&logo=prettier&logoColor=000&color=f3ae42)
+
+### Implementation time
+
+This challenge was completed over a span of 2.5 hours.
 
 ## Author
 
