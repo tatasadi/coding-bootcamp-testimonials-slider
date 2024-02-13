@@ -13,16 +13,28 @@ const cards = [
     name: 'Tanya Sinclair',
     role: 'UX Engineer',
   },
-  // {
-  //   imgSrc: '/images/image-john.jpg',
-  //   text: '“ If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ”',
-  //   name: 'John Tarkpor',
-  //   role: 'Junior Front-end Developer',
-  // },
+  {
+    imgSrc: '/images/image-john.jpg',
+    text: '“ If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ”',
+    name: 'John Tarkpor',
+    role: 'Junior Front-end Developer',
+  },
 ]
 
 const TestimonialCardComponent: React.FC = () => {
   const [current, setCurrent] = useState(cards[0])
+
+  const handleNext = () => {
+    const index = cards.indexOf(current)
+    const nextIndex = index === cards.length - 1 ? 0 : index + 1
+    setCurrent(cards[nextIndex])
+  }
+
+  const handlePrev = () => {
+    const index = cards.indexOf(current)
+    const prevIndex = index === 0 ? cards.length - 1 : index - 1
+    setCurrent(cards[prevIndex])
+  }
 
   return (
     <article className="relative">
@@ -39,10 +51,16 @@ const TestimonialCardComponent: React.FC = () => {
               />
             </div>
             <div className="relative z-20 -mt-[1.125rem] flex h-10 justify-center lg:-mt-[1.65rem] lg:ml-[7.9375rem] lg:h-14 lg:justify-start">
-              <button className="flex w-10 items-center justify-center rounded-l-full bg-white shadow-lg lg:w-14 lg:shadow-2xl">
+              <button
+                className="navigation-button rounded-l-full"
+                onClick={handlePrev}
+              >
                 <Image src={iconPrev} alt="Previous" width={10} height={10} />
               </button>
-              <button className="flex w-10 items-center justify-center rounded-r-full bg-white shadow-lg lg:w-14 lg:shadow-2xl">
+              <button
+                className="navigation-button rounded-r-full"
+                onClick={handleNext}
+              >
                 <Image src={iconNext} alt="Previous" width={10} height={10} />
               </button>
             </div>
