@@ -23,17 +23,28 @@ const cards = [
 
 const TestimonialCardComponent: React.FC = () => {
   const [current, setCurrent] = useState(cards[0])
+  const [isAnimating, setIsAnimating] = useState(false)
 
   const handleNext = () => {
-    const index = cards.indexOf(current)
-    const nextIndex = index === cards.length - 1 ? 0 : index + 1
-    setCurrent(cards[nextIndex])
+    setIsAnimating(true)
+
+    setTimeout(() => {
+      const index = cards.indexOf(current)
+      const nextIndex = index === cards.length - 1 ? 0 : index + 1
+      setCurrent(cards[nextIndex])
+      setIsAnimating(false)
+    }, 500)
   }
 
   const handlePrev = () => {
-    const index = cards.indexOf(current)
-    const prevIndex = index === 0 ? cards.length - 1 : index - 1
-    setCurrent(cards[prevIndex])
+    setIsAnimating(true) // Start animation
+
+    setTimeout(() => {
+      const index = cards.indexOf(current)
+      const prevIndex = index === 0 ? cards.length - 1 : index - 1
+      setCurrent(cards[prevIndex])
+      setIsAnimating(false)
+    }, 500)
   }
 
   return (
@@ -41,13 +52,15 @@ const TestimonialCardComponent: React.FC = () => {
       <div className="relative z-10 flex flex-col lg:flex-row">
         <div className="relative w-full p-6 lg:order-2 lg:p-0 lg:pr-[4.5625rem] lg:pt-[3.125rem]">
           <div className="mx-auto h-[19.25rem] w-[20.4375rem] bg-[url('/images/pattern-bg.svg')] bg-contain bg-no-repeat pt-7 lg:h-[41.0625rem] lg:w-[43.5625rem]">
-            <div className="relative z-10 mx-auto h-[16rem] w-[16rem] rounded-lg shadow-lg lg:mx-0 lg:ml-[4.0625rem] lg:mt-[2.1rem] lg:h-[33.75rem] lg:w-[33.75rem] lg:shadow-2xl">
+            <div
+              className={`relative z-10 mx-auto h-[16rem] w-[16rem] overflow-hidden rounded-lg shadow-lg lg:mx-0 lg:ml-[4.0625rem] lg:mt-[2.1rem] lg:h-[33.75rem] lg:w-[33.75rem] lg:shadow-2xl`}
+            >
               <Image
                 src={current.imgSrc}
                 alt={current.name}
                 width={540}
                 height={540}
-                className="rounded-lg"
+                className={`rounded-lg ${isAnimating ? 'translate-x-[100%]' : 'translate-x-0'} transition-all duration-500`}
               />
             </div>
             <div className="relative z-20 -mt-[1.125rem] flex h-10 justify-center lg:-mt-[1.65rem] lg:ml-[7.9375rem] lg:h-14 lg:justify-start">
@@ -77,8 +90,12 @@ const TestimonialCardComponent: React.FC = () => {
               />
             </div>
           </div>
-          <div className="px-7 text-center lg:p-0">
-            <p className="relative z-20 text-lg font-light leading-6 text-dark-blue lg:ml-[2.2rem] lg:translate-x-[8.125rem] lg:text-left lg:text-[2rem] lg:leading-[2.75rem]">
+          <div
+            className={`relative z-20 px-7 text-center lg:p-0 ${isAnimating ? '-translate-x-[100%] opacity-0' : 'translate-x-0 opacity-100'} transition-all duration-500`}
+          >
+            <p
+              className={`text-lg font-light leading-6 text-dark-blue lg:ml-[2.2rem] lg:translate-x-[8.125rem] lg:text-left lg:text-[2rem] lg:leading-[2.75rem]`}
+            >
               {current.text}
             </p>
             <div className="flex flex-col items-center lg:ml-[10.3125rem] lg:mt-8 lg:flex-row lg:gap-2">
